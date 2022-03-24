@@ -1,0 +1,24 @@
+{% extends 'mainapp/index.html' %}
+{% block main %}
+  <table>
+    <caption><h1>Граждане</h1></caption>
+      <tr>
+        <td><h3>ФИО</h3></td>
+        <td><h3>Город</h3></td>
+      </tr>
+  {% for citizen in citizen_list %}
+    <tr>
+      <td>{{ citizen }}</td>
+      <td><a href="{{ citizen.city.get_absolute_url }}"> {{ citizen.city }}</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+  <table>
+    <caption><h1>Самые населенные города</h1></caption>
+    {% for city in biggest_cities %}
+    <tr>
+      <td><a href="{{ city.get_absolute_url }}">{{ city }}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

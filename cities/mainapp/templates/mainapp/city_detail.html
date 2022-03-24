@@ -1,0 +1,13 @@
+{% extends 'mainapp/index.html' %}
+{% block main %}
+  <h1>{{ city }}</h1>
+  <table>
+    <caption><h1>Граждане</h1></caption>
+    <tr></tr>
+    {% for citizen in city.citizens.all %}
+    <tr>
+      <td>{{ citizen }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
