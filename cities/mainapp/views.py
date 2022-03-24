@@ -13,7 +13,7 @@ class HomePage(ListView):
         self.extra_context.update({
             'biggest_cities': City.objects.annotate(
                 citizens_count=Count('citizens')
-            ).order_by('-citizens_count')[:5]
+            ).order_by('-citizens_count')[:10]
         })
         return super().get_context_data(**kwargs)
 
